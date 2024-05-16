@@ -5,8 +5,14 @@ from langchain.embeddings import OpenAIEmbeddings
 from langchain.vectorstores.chroma import Chroma
 import os
 
+langchain_tracing = os.getenv('LANGCHAIN_TRACING_V2')
+langchain_key = os.getenv('LANGCHAIN_KEY')
+openai_key = os.getenv('OPENAI_KEY')
+
+
 DATA_PATH = 'data'
 CHROMA_PATH = 'chroma'
+
 
 def main():
     documents = load_documents()
